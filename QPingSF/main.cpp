@@ -33,7 +33,7 @@ void testQPing(QString destIpAddress)
 
     // see sample of *.ini
     QString iniFilePath = "./ping-config-win-kr.ini";
-    // QString iniFilePath = "./ping-config-linux-kr.ini";
+    // QString iniFilePath = "./ping-config-linux-en.ini";
 
     QPing qp;
     qp.setIniFile( iniFilePath );
