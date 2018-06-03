@@ -13,28 +13,35 @@ using namespace std;
 
 #include "QPing.h"
 
-void testQPing();
+void testQPing(QString destIpAddress);
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    testQPing();
+    QString destIpAddress = "192.168.0.1";
+    if ( argc == 2 )
+    {
+        QString strArg = argv[1];
+        destIpAddress = strArg;
+    }
+    testQPing(destIpAddress);
     return 0;  // return a.exec();
 }
 
-void testQPing()
+void testQPing(QString destIpAddress)
 {
+
+    // see sample of *.ini
+    QString iniFilePath = "./ping-config-win-kr.ini";
+    // QString iniFilePath = "./ping-config-linux-kr.ini";
+
     QPing qp;
-    QString iniFilePath = "./ping-config-win-kr.ini"; // see sample of *.ini
     qp.setIniFile( iniFilePath );
     if ( ! qp.loadIniFile() )
     {
         std::cout <<  "failed to load ini file" << std::endl;
         return;
     }
-
-    QString destIpAddress = "192.168.100.10";
-    // QString destIpAddress = "192.168.0.1";
 
     QPing::pingResult result = qp.ping(destIpAddress);
 
