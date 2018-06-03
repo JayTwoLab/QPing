@@ -8,6 +8,9 @@
 #include <QFile>
 #include <QSettings>
 
+#include <iostream>
+using namespace std;
+
 #include "QPing.h"
 
 void testQPing();
@@ -26,7 +29,7 @@ void testQPing()
     qp.setIniFile( iniFilePath );
     if ( ! qp.loadIniFile() )
     {
-        qDebug() << "failed to load ini file";
+        std::cout <<  "failed to load ini file" << std::endl;
         return;
     }
 
@@ -38,19 +41,19 @@ void testQPing()
     switch( result )
     {
         case QPing::pingSuccess:
-            qDebug() << " Success to ping " << destIpAddress;
+            std::cout <<  "Success to ping" << std::endl;
         break;
 
         case QPing::pingFailed:
-            qDebug() << " Failed to ping " << destIpAddress;
+            std::cout <<  "Failed to ping" << std::endl;
         break;
 
         case QPing::initFailed:
-            qDebug() << "[NOK] Initialization is failed";
+            std::cout <<  "[NOK] Initialization is failed" << std::endl;
         break;
 
         case QPing::notFound:
-            qDebug() << "[NOK] Result is not found";
+            std::cout <<  "[NOK] Result is not found" << std::endl;
         break;
     }
 }
