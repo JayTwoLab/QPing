@@ -17,7 +17,7 @@
 HEADERS += QPing.h
 SOURCES += QPing.cpp
 ```
-- 클래스를 활용하는 소스 코드를 넣으세요. See main.cpp를 참조하세요.
+- 클래스를 활용하는 소스 코드를 넣으세요. main.cpp를 참조하세요.
 ```cpp
 // main.cpp
 #include "QPing.h"
