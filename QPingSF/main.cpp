@@ -9,40 +9,38 @@
 #include <QSettings>
 
 #include <iostream>
-using namespace std;
 
 #include "QPing.h"
-
-void testQPing(QString destIpAddress);
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
+
     QString destIpAddress = "192.168.0.1";
     if ( argc == 2 )
     {
+        // You can use application first parameter
+        // For example) QPingSF 192.168.100.10
         QString strArg = argv[1];
         destIpAddress = strArg;
     }
-    testQPing(destIpAddress);
-    return 0;  // return a.exec();
-}
 
-void testQPing(QString destIpAddress)
-{
-
-    // see sample of *.ini
-    QString iniFilePath = "./ping-config-win-kr.ini";
-    // QString iniFilePath = "./ping-config-linux-en.ini";
+    // see sample of *.ini for OS (You can
+    QString iniFilePath = "./ping-config-win-en.ini"; // Windows, English
+    // QString iniFilePath = "./ping-config-win-kr.ini"; // Windows, Korean
+    // QString iniFilePath = "./ping-config-linux-en.ini"; // Linux, English
 
     QPing qp;
+
+     // set configuration file
     qp.setIniFile( iniFilePath );
     if ( ! qp.loadIniFile() )
     {
-        std::cout <<  "failed to load ini file" << std::endl;
-        return;
+        std::cout <<  "[ERROR] Failed to load ini file" << std::endl;
+        return (-1);
     }
 
+    // Ping!
     QPing::pingResult result = qp.ping(destIpAddress);
 
     switch( result )
@@ -55,12 +53,15 @@ void testQPing(QString destIpAddress)
             std::cout <<  "Failed to ping" << std::endl;
         break;
 
-        case QPing::initFailed:
-            std::cout <<  "[NOK] Initialization is failed" << std::endl;
+        case QPing::initFailed: // something wrong
+            std::cout <<  "[ERROR] Initialization is failed" << std::endl;
         break;
 
-        case QPing::notFound:
-            std::cout <<  "[NOK] Result is not found" << std::endl;
+        case QPing::notFound: // something wrong
+            std::cout <<  "[ERROR] Result is not found" << std::endl;
         break;
     }
+
+    return 0;  // return a.exec();
 }
+
