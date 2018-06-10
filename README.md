@@ -2,8 +2,10 @@
 
 > *Read this in other languages: [English](README.md), :kr: [한국어](README.ko.md)*
 
-### Summary
+![](markdown-data/qping.png)
+
 - Ping class for Qt 5
+- You can check the response by shooting the ping.
 
 ### Note
 - I do not call functions that use the ICMP protocol.
