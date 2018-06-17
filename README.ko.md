@@ -4,11 +4,11 @@
 
 ![](markdown-data/qping.png)
 
-- Ping 클래스. Qt5 사용
+- Ping 클래스. Qt 5.x를 사용.
 - 이 클래스로 ping을 쏘고 응답을 확인할 수 있습니다.
 
 ### 노트
-- ICMP 프로토콜을 사용하는 함수를 부르지 않도록 구성하였습니다.
+- ICMP 프로토콜을 사용하는 함수를 호출하지 않도록 구성하였습니다.
 	- 저는 예전에 로소켓을 사용하는 유사한 클래스를 만든 적이 있습니다.
 	- 하지만 그런 경우 사용자 계정의 권한 상승이 필요합니다. root, superuser, admin 등
 
@@ -37,15 +37,14 @@ int main(int argc, char *argv[])
         destIpAddress = strArg;
     }
 
-    // see sample of *.ini for OS (You can
+    // 각 OS 별 INI 파일을 참조하세요. 자신만의 INI 파일을 만글 수 있습니다.
     // QString iniFilePath = "./ping-config-win-en.ini"; // Windows, English
     QString iniFilePath = "./ping-config-win-kr.ini"; // Windows, Korean
     // QString iniFilePath = "./ping-config-linux-en.ini"; // Linux, English
 
     QPing qp;
-
-     // set configuration file
-    qp.setIniFile( iniFilePath );
+     
+    qp.setIniFile( iniFilePath ); // 환경 파일을 설정
     if ( ! qp.loadIniFile() )
     {
         std::cout <<  "[ERROR] Failed to load ini file" << std::endl;
@@ -65,16 +64,16 @@ int main(int argc, char *argv[])
             std::cout <<  "Failed to ping" << std::endl;
         break;
 
-        case QPing::initFailed: // something wrong
+        case QPing::initFailed: // 초기화 실패
             std::cout <<  "[ERROR] Initialization is failed" << std::endl;
         break;
 
-        case QPing::notFound: // something wrong
+        case QPing::notFound: // 비정상 결과값
             std::cout <<  "[ERROR] Result is not found" << std::endl;
         break;
     }
 
-    return 0;  // return a.exec();
+    return 0;  
 }
 ```
 

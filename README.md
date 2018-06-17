@@ -37,15 +37,14 @@ int main(int argc, char *argv[])
         destIpAddress = strArg;
     }
 
-    // see sample of *.ini for OS (You can
+    // See sample of *.ini for each OS. You can make your own INI.
     QString iniFilePath = "./ping-config-win-en.ini"; // Windows, English
     // QString iniFilePath = "./ping-config-win-kr.ini"; // Windows, Korean
     // QString iniFilePath = "./ping-config-linux-en.ini"; // Linux, English
 
     QPing qp;
-
-     // set configuration file
-    qp.setIniFile( iniFilePath );
+     
+    qp.setIniFile( iniFilePath ); // set configuration file
     if ( ! qp.loadIniFile() )
     {
         std::cout <<  "[ERROR] Failed to load ini file" << std::endl;
