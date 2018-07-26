@@ -81,4 +81,4 @@ int main(int argc, char *argv[])
 - MIT 라이센스
 
 ### 문의
-- https://github.com/j2doll/QPing
+- https://github.com/j2doll/QPing/issues
