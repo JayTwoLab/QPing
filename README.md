@@ -80,6 +80,6 @@ int main(int argc, char *argv[])
 ### License
 - MIT License
 
-### Contacts
-- https://github.com/j2doll/QPing
+### Contact
+- https://github.com/j2doll/QPing/issues
 - Hi! I'm j2doll. My native language is not English and my English is not fluent. Please, use EASY English. :-)
