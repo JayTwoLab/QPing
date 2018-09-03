@@ -8,17 +8,21 @@
 - You can check the response by shooting the ping.
 
 ### Note
+
 - I do not call functions that use the ICMP protocol.
 	- I have written a raw socket program for pinging in the past.
 	- But there's a problem with user's elevation. Application should be executed by root or superuser.
 
 ### How to use
+
 - Copy QPing.h, QPing.cpp to your project.
+
 - Append Qt project(*.pro) setting of source code
 ```qmake
 HEADERS += QPing.h
 SOURCES += QPing.cpp
 ```
+
 - Add source code that applies the class. See main.cpp.
 ```cpp
 // main.cpp 
@@ -37,7 +41,7 @@ int main(int argc, char *argv[])
         destIpAddress = strArg;
     }
 
-    // See sample of *.ini for each OS. You can make your own INI.
+    // See sample of *.ini for each OS and language. You can make your own INI.
     QString iniFilePath = "./ping-config-win-en.ini"; // Windows, English
     // QString iniFilePath = "./ping-config-win-kr.ini"; // Windows, Korean
     // QString iniFilePath = "./ping-config-linux-en.ini"; // Linux, English
@@ -81,5 +85,5 @@ int main(int argc, char *argv[])
 - MIT License
 
 ### Contact
-- https://github.com/j2doll/QPing/issues
+- Leave me a issue. [https://github.com/j2doll/QPing/issues](https://github.com/j2doll/QPing/issues)
 - Hi! I'm j2doll. My native language is not English and my English is not fluent. Please, use EASY English. :-)
