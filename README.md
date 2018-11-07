@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
 ```
 
 ### License and links
-- QPing is under MIT icense. [https://github.com/j2doll/QPing](https://github.com/j2doll/QPing)
+- QPing is under MIT license. [https://github.com/j2doll/QPing](https://github.com/j2doll/QPing)
 
 ### Contact
 - Leave me a issue. [https://github.com/j2doll/QPing/issues](https://github.com/j2doll/QPing/issues)
