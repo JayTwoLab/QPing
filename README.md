@@ -5,6 +5,7 @@
 ![](markdown-data/qping.png)
 
 - Ping class for Qt 5
+
 - You can check the response by shooting the ping.
 
 ### Note
@@ -18,12 +19,14 @@
 - Copy QPing.h, QPing.cpp to your project.
 
 - Append Qt project(*.pro) setting of source code
+
 ```qmake
 HEADERS += QPing.h
 SOURCES += QPing.cpp
 ```
 
 - Add source code that applies the class. See main.cpp.
+
 ```cpp
 // main.cpp 
 #include "QPing.h"
@@ -82,8 +85,11 @@ int main(int argc, char *argv[])
 ```
 
 ### License and links
+
 - QPing is under MIT license. [https://github.com/j2doll/QPing](https://github.com/j2doll/QPing)
 
 ### Contact
+
 - Leave me a issue. [https://github.com/j2doll/QPing/issues](https://github.com/j2doll/QPing/issues)
+
 - Hi! I'm j2doll. My native language is not English and my English is not fluent. Please, use EASY English. :-)
