@@ -5,6 +5,7 @@
 ![](markdown-data/qping.png)
 
 - Ping 클래스. Qt 기반.
+
 - 이 클래스로 ping을 쏘고 응답을 확인할 수 있습니다.
 
 ### 노트
@@ -18,12 +19,14 @@
 - QPing.h, QPing.cpp 를 여러분의 프로젝트에 복사하세요.
 
 - 여러분의 Qt 프로젝트(*.pro)에 해당 소스 코드를 추가하세요.
+
 ```qmake
 HEADERS += QPing.h
 SOURCES += QPing.cpp
 ```
 
 - 클래스를 활용하는 소스 코드를 넣으세요. main.cpp를 참조하세요.
+
 ```cpp
 // main.cpp
 #include "QPing.h"
@@ -82,7 +85,9 @@ int main(int argc, char *argv[])
 ```
 
 ### 라이센스
-- Qping은 MIT 라이센스입니다. [https://github.com/j2doll/QPing](https://github.com/j2doll/QPing)
+
+- QPing은 MIT 라이센스입니다. [https://github.com/j2doll/QPing](https://github.com/j2doll/QPing)
 
 ### 문의
+
 - 이슈를 남겨 주세요. [https://github.com/j2doll/QPing/issues](https://github.com/j2doll/QPing/issues)
