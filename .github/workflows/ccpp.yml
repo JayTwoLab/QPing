@@ -10,14 +10,16 @@ jobs:
     
     steps:
     - uses: actions/checkout@master
-    # - name: configure
-    #  run: ./configure
-    #- name: make
-    #  run: make
-    #- name: make test
-    #  run: make test
-     - name: make
-       run: cd QPingSF; qmake QPingSF.pro; make
+    - name: make
+      run: cd QPingSF; qmake QPingSF.pro; make
+   
+    
+# - name: configure
+#  run: ./configure
+#- name: make
+#  run: make
+#- name: make test
+#  run: make test
 
             
     
