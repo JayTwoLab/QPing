@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ping-config-linux-en.ini</file>
+        <file>ping-config-win-en.ini</file>
+        <file>ping-config-win-kr.ini</file>
+    </qresource>
+</RCC>
+
+
+
