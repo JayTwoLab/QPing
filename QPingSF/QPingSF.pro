@@ -32,4 +32,9 @@ SOURCES += \
 main.cpp \
 QPing.cpp
 
+RESOURCES += \
+main.qrc
+
+
+
 

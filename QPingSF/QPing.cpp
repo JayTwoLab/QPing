@@ -15,6 +15,7 @@
 #include <QDebug>
 #include <QFile>
 #include <QSettings>
+#include <QStringList>
 
 #include "QPing.h"
 
@@ -52,7 +53,19 @@ bool QPing::loadIniFile(QString iniFile)
 
     QString fileName = QString("%1").arg(m_iniFile);
     QSettings settings( fileName, QSettings::IniFormat );
+
+#if QT_VERSION >= 0x060000 // Qt 6.0 or over
+    /* Compatibility with older Qt versions
+     * Please note that this behavior is different to how QSettings behaved in
+     * versions of Qt prior to Qt 6. INI files written with Qt 5 or earlier
+     * aree however fully readable by a Qt 6 based application (unless a ini
+     * codec different from utf8 had been set). But INI files written with
+     * Qt 6 will only be readable by older Qt versions if you set the
+     * "iniCodec" to a utf-8 textcodec.
+     */
+#else
     settings.setIniCodec( "UTF-8" );
+#endif
 
     QVariant varPingParam = settings.value( "ping-param" );
     if ( varPingParam.toString().isEmpty() )
@@ -84,34 +97,38 @@ QPing::pingResult QPing::ping(QString ipAddress)
 
     if ( m_successString.isEmpty() )
     {
-        qDebug() << "m_successString is empty";
-        return initFailed;
+        return initFailed1;
     }
 
     if ( m_failedString.isEmpty())
     {
-        qDebug() << "m_failedString is empty";
-        return initFailed;
+        return initFailed2;
     }
 
     QProcess pingProcess;
+
+#if QT_VERSION >= 0x060000 // Qt 6.0 or over
+    QString executeString = QString("ping %1 %2").arg(m_pingParam).arg(ipAddress);
+
+    pingProcess.startCommand( executeString );
+    pingProcess.waitForFinished( -1 );
+#else
     QString executeString = QString("ping %1 %2").arg(m_pingParam).arg(ipAddress);
 
     pingProcess.start(executeString);
     pingProcess.waitForFinished();
+#endif
 
     QByteArray ba = pingProcess.readAllStandardOutput();
     QString output = QString::fromLocal8Bit( ba );
 
     if ( output.indexOf(m_successString) >= 0 )
     {
-        qDebug() << "Success to PING";
         return pingSuccess;
     }
 
     if ( output.indexOf(m_failedString) >= 0 )
     {
-        qDebug() << "Failed to PING";
         return pingFailed;
     }
 

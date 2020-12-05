@@ -61,7 +61,7 @@ public:
      * @enum notFound : result is not found. something wrong.
      */
     enum pingResult
-    { pingSuccess, pingFailed, initFailed, notFound };
+    { pingSuccess, pingFailed, initFailed1, initFailed2, notFound };
 
 public:
 
