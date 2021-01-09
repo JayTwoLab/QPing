@@ -86,8 +86,8 @@ int main(int argc, char *argv[])
 
 ### 라이센스
 
-- QPing은 MIT 라이센스입니다. [https://github.com/j2doll/QPing](https://github.com/j2doll/QPing)
+- QPing은 MIT 라이센스입니다. https://github.com/JayTwoLab/QPing
 
 ### 문의
 
-- 이슈를 남겨 주세요. [https://github.com/j2doll/QPing/issues](https://github.com/j2doll/QPing/issues)
+- 이슈를 남겨 주세요. https://github.com/JayTwoLab/QPing/issues
