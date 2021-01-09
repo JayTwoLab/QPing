@@ -86,10 +86,10 @@ int main(int argc, char *argv[])
 
 ### License and links
 
-- QPing is under MIT license. [https://github.com/j2doll/QPing](https://github.com/j2doll/QPing)
+- QPing is under MIT license. https://github.com/JayTwoLab/QPing
 
 ### Contact
 
-- Leave me a issue. [https://github.com/j2doll/QPing/issues](https://github.com/j2doll/QPing/issues)
+- Leave me a issue. https://github.com/JayTwoLab/QPing/issues
 
 - Hi! I'm j2doll. My native language is not English and my English is not fluent. Please, use EASY English. :-)
