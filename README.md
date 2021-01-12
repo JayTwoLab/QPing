@@ -4,7 +4,7 @@
 
 ![](markdown-data/qping.png)
 
-- Ping class for Qt 5
+- Ping class for Qt 5 or 6
 
 - You can check the response by shooting the ping.
 
