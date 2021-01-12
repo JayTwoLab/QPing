@@ -4,7 +4,7 @@
 
 ![](markdown-data/qping.png)
 
-- Ping 클래스. Qt 기반.
+- Ping 클래스. Qt 5 또는 6
 
 - 이 클래스로 ping을 쏘고 응답을 확인할 수 있습니다.
 
